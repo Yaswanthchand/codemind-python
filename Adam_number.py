@@ -12,9 +12,6 @@ while n2:
     r2=r2*10+r
     n2=n2//10
 if(r2==n1):
-    print('True')
+    print(True)
 else:
-    print('False')
-    
-
-
+    print(False)
