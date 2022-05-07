@@ -2,7 +2,7 @@ n=int(input())
 rev=0
 temp=n
 if n<0:
-    n=n+(n*(-2))
+    n=n*(-1)
 while n:
     r=n%10
     rev=rev*10+r
