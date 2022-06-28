@@ -1,17 +1,17 @@
 n=int(input())
-n1=n*n
-r1=0
-while n:
+n1=0
+x=n*n
+while(n):
     r=n%10
-    r1=r1*10+r
+    n1=n1*10+r
     n=n//10
-n2=r1*r1
-r2=0
-while n2:
-    r=n2%10
-    r2=r2*10+r
-    n2=n2//10
-if(r2==n1):
+y=n1*n1
+z=0
+while(y):
+    r=y%10
+    z=z*10+r
+    y//=10
+if(z==x):
     print(True)
 else:
     print(False)
