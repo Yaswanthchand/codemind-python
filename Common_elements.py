@@ -10,4 +10,3 @@ for i in z:
     if i not in k:
         k.append(i)
 print(*k)
-        
