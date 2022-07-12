@@ -1,7 +1,7 @@
 n=int(input())
 a=list(map(int,input().split()))
 s=0
-for i in range(n):
-    if a[i]%2==0:
-        s+=a[i]
+for i in a:
+    if i%2==0:
+        s+=i
 print(s)
