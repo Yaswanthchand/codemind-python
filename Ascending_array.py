@@ -6,3 +6,4 @@ if b==a:
     print('yes')
 else:
     print('no')
+    
