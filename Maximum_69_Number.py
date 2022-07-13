@@ -5,12 +5,12 @@ d=0
 r=0
 rev=0
 while a>0:
-    b=a%10
+    r=a%10
+    b=b*10+r
     a//=10
-    r=r*10+b
-while r>0:
-    c=r%10
-    r//=10
+while b>0:
+    c=b%10
+    b//=10
     if d<1:
         if c==6:
             c=9
