@@ -1,16 +1,9 @@
 n=int(input())
 a=list(map(int,input().split()))
-x=(len(a)//2)
-k=[]
-y=[]
-
-for i in range(0,x):
-    k.append(a[i])
-for i in range(x,n):
-    y.append(a[i])
-m=sum(k)
-b=sum(y)
-print(b-m)
-
-
-    
+c=0
+c1=0
+for i in range(0,len(a)//2):
+    c+=a[i]
+for i in range(len(a)//2,len(a)):
+    c1+=a[i]
+print(abs(c-c1))
