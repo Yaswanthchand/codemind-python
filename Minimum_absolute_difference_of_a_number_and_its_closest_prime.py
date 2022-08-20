@@ -1,17 +1,27 @@
+def prime(a):
+    c=0
+    for i in range(1,a+1):
+        if a%i==0:
+            c+=1
+    if c==2:
+        return 1
+    else:
+        return 0
 a=int(input())
-for i in range(a,2,-1):
-    for j in range(2,i):
-        if i%j==0:
-            break
-    else:
+df=dl=l=f=0
+for i in range(a,0,-1):
+    if prime(i)==1:
+        f=i
+        df=a-i
         break
-for m in range(a+1,a+100):
-    for n in range(2,m):
-        if m%n==0:
-            break
-    else:
-         break
-if abs(a-m)>=abs(a-i):
-    print(abs(a-i))
-else:
-    print(abs(a-m))
+for i in range(a,10000):
+    if prime(i)==1:
+        l=i
+        dl=i-a
+        break
+if df==dl:
+    print(dl)
+elif df>dl:
+    print(dl)
+elif df<dl:
+    print(df)
