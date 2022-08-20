@@ -7,8 +7,8 @@ def prime(a):
     return 1
 a=int(input())
 b=int(input())
-c1=0
+count=0
 for i in range(a,b+1):
     if prime(i)==1 and i!=1:
-        c1+=1
-print(c1)
+        count+=1
+print(count)
