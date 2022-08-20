@@ -1,10 +1,8 @@
 a,b=map(int,input().split())
-if (a>b):
-    m=a
-else:
-    m=b
-while(True):
-    if m%a==0 and m%b==0:
-        print(m)
+lcm=1
+for i in range(10000):
+    if lcm%a==0 and lcm%b==0:
         break
-    m+=1
+    else:
+        lcm+=1
+print(lcm)
