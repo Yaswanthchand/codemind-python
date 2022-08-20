@@ -1,22 +1,23 @@
-def num(n):
-    t=n
-    d=0
-    f=0
-    while(n):
-        r=n%10
-        d+=1
-        if(r!=0):
-            if t%r==0:
-                f+=1
-        n=n//10
-    if d==f:
-        return True
+def selfdiv(a):
+    t=a
+    flag=0
+    while t>0:
+        r=t%10
+        if r==0:
+            flag=0
+            break
+        if a%r==0:
+            flag=1
+            t//=10
+        else:
+            flag=0
+            break
+    if flag==1:
+        return 1
     else:
-        False
+        return 0
 a=int(input())
 b=int(input())
 for i in range(a,b+1):
-    if num(i):
-        print(i,end=' ')
-    
-                
+    if selfdiv(i)==1:
+        print(i,end=" ")
