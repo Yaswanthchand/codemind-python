@@ -8,12 +8,12 @@ def prime(a):
     else:
         return 0
 def rev(a):
-    s=0
+    su=0
     while a>0:
         rem=a%10
-        s=(s*10)+rem
+        su=(su*10)+rem
         a//=10
-    return s
+    return su
 a=int(input())
 arev=rev(a)
 if prime(a)==1:
@@ -22,4 +22,4 @@ if prime(a)==1:
     else:
         print("prime but not a circular prime")
 else:
-    print("not prime")
+    print("not prime") 
