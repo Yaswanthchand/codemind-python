@@ -1,28 +1,34 @@
-n=int(input())
-for i in range(n):
+def prime(a):
+    c=0
+    for i in range(1,a+1):
+        if a%i==0:
+            c+=1
+    if c==2:
+        return 1
+    else:
+        return 0
+def near(a):
     x=0
     y=0
-    c=0
-    d=0
+    dx=0
+    dy=0
+    for i in range(a,0,-1):
+        if prime(i)==1:
+            y=i
+            dy=a-i
+            break
+    for i in range(a,10000):
+        if prime(i)==1:
+            l=i
+            dx=i-a
+            break
+    if dy==dx:
+        return y
+    elif dy>dx:
+        return l
+    elif dy<dx:
+        return y
+t=int(input())
+for i in range(t):
     a=int(input())
-    for j in range(a,1,-1):
-        for k in range(2,int(j**0.5)+1):
-            if(j%k==0):
-                break
-        else:
-            x=j
-            break
-    for m in range(a,a+1000,1):
-        for l in range(2,int(m**0.5)+1):
-            if(m%l==0):
-                break
-        else:
-            y=m
-            break
-    c=a-x
-    d=y-a
-    if(c<=d):
-        print(x)
-    else:
-        print(y)
-    
+    print(near(a))
