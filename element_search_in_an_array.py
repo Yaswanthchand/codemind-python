@@ -1,8 +1,9 @@
-x=int(input())
-for i in range (x):
-    a=map(int,input().split())
-    se=int(input())
-    if se in a:
+n=int(input())
+a=input()
+se=input()
+for i in a:
+    if i==se:
         print(True)
-    else:
-        print(False)
+        break
+else:
+    print(False)
