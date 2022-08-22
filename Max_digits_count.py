@@ -1,14 +1,14 @@
-def fun(n):
-    c=0
-    while(n):
-        r=n%10
-        c+=1
-        n//=10
-    return c
-x=int(input())
+n=int(input())
 a=list(map(int,input().split()))
 b=[]
 for i in a:
-    b.append(fun(i))
-m=max(b)
-print(b.count(m))
+    c=0
+    if a==0:
+        b.append(1)
+        continue
+    while(i):
+        c+=1
+        i//=10
+    b.append(c)
+k=max(b)
+print(b.count(k))
