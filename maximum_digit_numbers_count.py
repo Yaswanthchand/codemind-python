@@ -1,29 +1,18 @@
-def fun(n):
-    c=0
-    while(n):
-        if n<0:
-            n=n*(-1)
-        r=n%10
-        c+=1
-        n//=10
-    return c
-x=int(input())
+n=int(input())
 a=list(map(int,input().split()))
 b=[]
 for i in a:
-    b.append(fun(i))
-m=max(b)
-for i in range(x):
-    if b[i]==m:
+    if i<0:
+        i=i*(-1)
+    c=0
+    if a==0:
+        b.append(1)
+        continue
+    while(i):
+        c+=1
+        i//=10
+    b.append(c)
+k=max(b)
+for i in range(n):
+    if k==b[i]:
         print(a[i],end=' ')
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
