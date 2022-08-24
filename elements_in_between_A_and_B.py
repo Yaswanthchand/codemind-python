@@ -1,12 +1,13 @@
 n=int(input())
 a=list(map(int,input().split()))
-m,n=map(int,input().split())
-c=[]
-for i in a:
-    if i>=m and i<=n:
-        c.append(i)
-if len(c)>0:
-    print(*c)
+b,c=map(int,input().split())
+k=0
+y=[]
+for i in range(n):
+    if a[i]>=b and a[i]<=c:
+        k=1
+        y.append(a[i])
+if k==0:
+    print(-1)
 else:
-    print('-1')
-     
+    print(*y)
