@@ -1,11 +1,8 @@
 n=int(input())
 a=list(map(int,input().split()))
-b=[]
-for i in a:
-    if i not in b:
-        b.append(i)
+a=set(a)
 s=0
-for i in b:
+for i in a:
     if i%2==0:
         s+=1
 print(s)
