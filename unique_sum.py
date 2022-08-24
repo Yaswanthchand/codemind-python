@@ -1,8 +1,7 @@
-t=int(input())
+n=int(input())
 a=list(map(int,input().split()))
-y=[]
+a=set(a)
+s=0
 for i in a:
-    if i not in y:
-        y.append(i)
-b=sum(y)
-print(b)
+    s=s+i
+print(s)
