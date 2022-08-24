@@ -1,9 +1,8 @@
-a=int(input())
+n=int(input())
 a=list(map(int,input().split()))
-b=int(input())
+m=int(input())
+m=a.index(m)
 s=0
-for i in a:
-    if i<=b:
-        s+=i
+for i in range(m+1):
+    s+=a[i]
 print(s)
-        
