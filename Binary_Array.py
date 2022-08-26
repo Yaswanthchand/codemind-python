@@ -1,8 +1,10 @@
-t=int(input())
+n=int(input())
 a=list(map(int,input().split()))
-for i in range(t):
-    if a[i]!=0 and a[i]!=1:
-        print(False)
+for i in a:
+    if i==1 or i==0:
+        continue
+    else:
+        print('False')
         break
 else:
     print(True)
