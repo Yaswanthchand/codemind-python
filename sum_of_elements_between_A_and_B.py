@@ -1,10 +1,14 @@
-n=int(input())
+t=int(input())
 a=list(map(int,input().split()))
 m,n=map(int,input().split())
-s=0
-for i in a:
-    if i>=m and i<=n:
-        s+=i
-print(s)
-        
+k=0
+min=0
+for i in range(t):
+    if a[i]>=m and a[i]<=n:
+        k=1
+        min=min+a[i]
+if k==0:
+    print(-1)
+else:
+    print(min)
         
