@@ -1,0 +1,31 @@
+n,k=map(int,input().split())
+f=0
+e=0
+b=0
+d=0
+c=0
+temp=n
+sum=0
+while(n>0):
+    r=n%10
+    n=n//10
+    sum=sum*10+r
+while(temp>0):
+    p=temp%10
+    temp=temp//10
+    c+=1
+    if(c<=k):
+        e=e*10+p
+while(e>0):
+    q=e%10
+    e=e//10
+    b=b*10+q
+while(sum>0):
+    s=sum%10
+    sum=sum//10
+    d+=1
+    if(d<=k):
+        f=f*10+s
+print(abs(b-f))
+    
+    
