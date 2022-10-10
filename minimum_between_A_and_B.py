@@ -1,15 +1,11 @@
-t=int(input())
+n=int(input())
 a=list(map(int,input().split()))
-m,n=map(int,input().split())
-k=0
-min=999
-for i in range(t):
-    if a[i]>=m and a[i]<=n:
-        k=1
-        if a[i]<min:
-            min=a[i]
-if k==0:
-    print(-1)
+x,y=map(int,input().split())
+b=[]
+for i in a:
+    if(i>=x and i<=y):
+        b.append(i)
+if(len(b)>0):
+    print(min(b))
 else:
-    print(min)
-    
+    print("-1")
