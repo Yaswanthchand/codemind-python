@@ -1,20 +1,20 @@
-a=int(input())
-arr=[]
+n=int(input())
+a=[]
 fa=0
 fb=1
 fn=fa+fb
 for i in range(100):
-    arr.append(fa)
+    a.append(fa)
     fn=fa+fb
     fa=fb
     fb=fn
 f=l=df=fl=0
 for i in range(100):
-    if arr[i]>a:
-        l=arr[i]
-        f=arr[i-1]
-        dl=l-a
-        df=a-f
+    if a[i]>n:
+        l=a[i]
+        f=a[i-1]
+        dl=l-n
+        df=n-f
         if df==dl:
             print(f,l)
         elif df>dl:
