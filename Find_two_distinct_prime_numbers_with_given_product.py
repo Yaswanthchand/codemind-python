@@ -8,15 +8,19 @@ def prime(a):
     else:
         return 0
 a=int(input())
-c=0
-for i in range(1,a):
-    for j in range(1,a):
-        if prime(i)==1 and prime(j)==1:
-            if i*j==a:
-                print(i,j)
-                c=1
+b=[]
+su=0
+for i in range(1,a+1):
+    if prime(i)==1 :
+        b.append(i)
+for j in range(len(b)):
+    for k in range(len(b)):
+        if(j==k):
+            continue
+        else:
+            if(b[j]*b[k]==a):
+                su+=1
+                print(b[j],end=' ')
                 break
-    if c==1:
-        break
-if c==0:
-    print(-1)
+if(su!=2):
+    print("-1")
