@@ -1,8 +1,9 @@
 n=int(input())
 a=list(map(int,input().split()))
-s=0
+sum=0
 for i in a:
-    if i%2!=0:
+    if(i%2==1):
         break
-    s+=i
-print(s)
+    else:
+        sum+=i
+print(sum)
