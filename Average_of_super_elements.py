@@ -1,16 +1,17 @@
 n=int(input())
 a=list(map(int,input().split()))
-s=0
-c=0
-k=0
 b=[]
 for i in a:
-    if a.count(i)==i and i not in b:
-        c+=1
-        b.append(i)
-        k=1
-        s=s+i
-if k==0:
-    print(-1)
+    x=a.count(i)
+    if x==i:
+        if i not in b:
+            b.append(i)
+y=len(b)
+if(len(b)>0):
+    sum=0
+    for i in b:
+        sum=sum+i
+    sum=sum/y
+    print("{:0.2f}".format(sum))
 else:
-    print('{:.2f}'.format(s/c))
+    print("-1")
