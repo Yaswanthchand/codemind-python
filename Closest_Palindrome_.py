@@ -6,7 +6,10 @@ def rev(a):
         a//=10
     return s
 a=int(input())
-p1=p2=d1=d2=0
+p1=0
+p2=0
+d1=0
+d2=0
 for i in range(a-1,0,-1):
     if rev(i)==i:
         p1=i
