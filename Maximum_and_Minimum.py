@@ -1,14 +1,13 @@
 n=int(input())
 a=list(map(int,input().split()))
-f=0
-s=[]
-k=0
-for i in range(n):
-    if a[i]==a.count(a[i]) and a[i] not in s:
-        s.append(a[i])
-        f+=1
-        k=1
-if k==0:
-    print(-1)
+b=[]
+for i in a:
+    x=a.count(i)
+    if(x==i):
+        if i not in b:
+            b.append(i)
+if(len(b)>0):
+    print(min(b),max(b))
 else:
-    print(min(s),max(s))
+    print("-1")
+    
