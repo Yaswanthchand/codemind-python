@@ -1,18 +1,16 @@
 n,k=map(int,input().split())
 a=list(map(int,input().split()))
-x=0
-for i in range(n):
-    if a[i]<0:
-        a[i]=a[i]*(-1)
+y=0
+for i in a:
     c=0
-    if a[i]==0:
-        c=1
-    y=a[i]
-    while y:
-        d=y%10
-        y//=10
+    if(i<0):
+        i=i*(-1)
+    if(i==0):
         c+=1
-    if k==c:
-        x+=1
-print(x)
-        
+    while(i>0):
+        j=i%10
+        i=i//10
+        c+=1
+    if(c==k):
+        y+=1
+print(y)
