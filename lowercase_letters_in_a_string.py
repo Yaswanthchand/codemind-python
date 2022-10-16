@@ -1,7 +1,6 @@
-a=input()
-b='qwertyuioplkjhgfdsazxcvbnm'
-c=[]
-for i in a:
-    if i in b:
-        c.append(i)
-print(len(c))
+n=input()
+c=0
+for i in n:
+    if(i.islower()):
+        c+=1
+print(c)
