@@ -1,8 +1,14 @@
-x=int(input())
+n=int(input())
 a=list(map(int,input().split()))
-m,n=map(int,input().split())
-sum=0
+x,y=map(int,input().split())
+b=[]
 for i in a:
-    if i<m or i>n:
-        sum+=i
-print(sum)
+    if(i<x or i>y):
+        b.append(i)
+if(len(b)>0):
+    sum=0
+    for j in b:
+        sum+=j
+    print(sum)
+else:
+    print("0")
