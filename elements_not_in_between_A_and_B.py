@@ -1,11 +1,11 @@
-x=int(input())
+n=int(input())
 a=list(map(int,input().split()))
-m,n=map(int,input().split())
-c=[]
+x,y=map(int,input().split())
+b=[]
 for i in a:
-    if i<m or i>n:
-        c.append(i) 
-if len(c)>0:
-    print(*c)
+    if(i<x or i>y):
+        b.append(i)
+if(len(b)>0):
+    print(*b)
 else:
-    print('-1')
+    print("-1")
