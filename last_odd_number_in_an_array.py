@@ -1,10 +1,6 @@
 n=int(input())
 a=list(map(int,input().split()))
-max=0
-for i in range(n):
-    if a[i]%2==1:
-        r=i
-        if(r>max):
-            max=r
-print(a[max])
-        
+for i in a:
+    if(i%2==1):
+        x=i
+print(x)
