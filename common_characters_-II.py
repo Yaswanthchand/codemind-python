@@ -1,12 +1,14 @@
 a=input()
 b=input()
+c=[]
 a=a.lower()
 b=b.lower()
-c=[]
-for i in a:
-    if i in b:
-        if i==' ':
-            continue
-        if i not in c:
-            c.append(i)
-print(len(c))
+for i in a :
+    if i in b and i!=' ':
+        c.append(i)
+c=set(c)
+c=sorted(c)
+if(len(c)>0):
+     print(len(c))
+else:
+    print("0")
