@@ -1,0 +1,36 @@
+
+import numpy as np
+
+x=np.array([['sunny', 'warm' ,'normal', 'strong', 'warm', 'same'],
+ ['sunny', 'warm', 'high', 'strong', 'warm' ,'same'],
+ ['rainy' ,'cold', 'high', 'strong', 'warm' ,'change'],
+ ['sunny', 'warm', 'high', 'strong' ,'cool' ,'change']])
+
+y=np.array(['yes','yes','no','yes'])
+
+
+s_h = x[0].copy()
+g_h = [["?" for i in range(len(s_h))] for i in range(len(s_h))]
+i=0
+for  h in x:
+    if y[i] == "yes":
+        for x in range(len(s_h)):
+            if h[x]!= s_h[x]:
+                s_h[x] ='?'
+                g_h[x][x] ='?'
+       
+    if y[i] == "no":        
+        for x in range(len(s_h)):
+            if h[x]!= s_h[x]:
+                g_h[x][x] = s_h[x]
+            else:
+                g_h[x][x] = '?'
+    i+=1
+
+f = [i for i, val in enumerate(g_h) if val == ['?', '?', '?', '?', '?', '?']]
+for i in f:
+    g_h.remove(['?', '?', '?', '?', '?', '?'])
+
+
+print()
+print( s_h,'and', g_h)
