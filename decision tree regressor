@@ -1,0 +1,19 @@
+import pandas as pd
+a=['crim','zn','indus','chas','nox','rm','age','dis','rad','tax','ptratio','b','lstat','medv']
+data=pd.read_csv(r"D:\dataset\boston .csv",names=a)
+data.shape
+data.describe()
+data.info()
+data.dropna(inplace=True)
+x=data.iloc[:,:-1].values
+y=data.iloc[:,-1].values
+from sklearn.model_selection import train_test_split
+xtrain,xtest,ytrain,ytest=train_test_split(x,y,test_size=0.20,random_state=4)
+from sklearn.tree import DecisionTreeRegressor
+model=DecisionTreeRegressor()
+model.fit(xtrain,ytrain)
+ypred=model.predict(xtest)
+from sklearn.metrics import mean_squared_error
+import math
+print(math.sqrt(mean_squared_error(ytest,ypred)))
+print(model.predict([[0.00632,18,2.31,0,0.538,6.575,65.2,4.09,1,296,15.3,396.9,4.98]]))
