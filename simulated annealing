@@ -1,0 +1,33 @@
+from numpy import asarray, exp
+from numpy.random import randn, rand, seed
+from matplotlib import pyplot
+def objective(step):
+    return step[0] ** 2.0
+def sa(objective, area, iterations, step_size, temperature):
+    start_point = area[:, 0] + rand( len( area ) ) * ( area[:, 1] - area[:, 0] )
+    start_point_eval = objective(start_point)
+    mia_start_point, mia_start_eval = start_point, start_point_eval
+    outputs = []
+    for i in range(iterations):
+        mia_step = mia_start_point + randn( len( area ) ) * step_size  
+        mia_step_eval = objective(mia_step)
+        if mia_step_eval < start_point_eval:
+            start_point, start_point_eval = mia_step, mia_step_eval
+            outputs.append(start_point_eval)
+            print('Acceptance Criteria = %.5f' % mac," ",'iteration Number = ',i," ", 'best_so_far = ',start_point," " ,'new_best = %.5f' % start_point_eval)
+        difference = mia_step_eval - mia_start_eval
+        t = temperature / float(i + 1)
+        mac = exp(-difference / t)
+        if difference < 0 or rand() < mac:
+            mia_start_point, mia_start_eval = mia_step, mia_step_eval
+    return [start_point, start_point_eval, outputs]
+seed(1)
+area = asarray([[-6.0, 6.0]])
+temperature = 12
+iterations = 1200
+step_size = 0.1
+start_point, output, outputs = sa(objective, area, iterations, step_size, temperature)
+pyplot.plot(outputs, 'ro-')
+pyplot.xlabel('Improvement Value')
+pyplot.ylabel('Evaluation of Objective Function')
+pyplot.show()
