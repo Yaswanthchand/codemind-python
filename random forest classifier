@@ -1,0 +1,17 @@
+import pandas as pd
+data = pd.read_csv(r"D:\datasets\iris.csv")
+data.info()
+data.shape
+data.describe
+x=data.iloc[:,:-1].values
+y=data.iloc[:,-1].values
+from sklearn.model_selection import train_test_split
+xtrain,xtest,ytrain,ytest=train_test_split(x,y,test_size=0.20,random_state=4)
+from sklearn.ensemble import RandomForestClassifier
+model  = RandomForestClassifier()
+model.fit(xtrain,ytrain)
+ypred=model.predict(xtest)
+from sklearn.metrics import accuracy_score
+print(accuracy_score(ytest, ypred)*100)
+#predicting a set
+print(model.predict([[2.0,3.4,6.32,6.7]]))
